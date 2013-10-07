@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Value pound:</strong>
+  <%= @coin.value_pound %>
+</p>
+
+<p>
+  <strong>Value pence:</strong>
+  <%= @coin.value_pence %>
+</p>
+
+<%= link_to 'Edit', edit_coin_path(@coin) %> |
+<%= link_to 'Back', coins_path %>

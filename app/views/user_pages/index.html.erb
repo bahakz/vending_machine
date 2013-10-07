@@ -1,0 +1,27 @@
+<h1>Listing products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price pound</th>
+      <th>Price pence</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.price_pound %></td>
+        <td><%= product.price_pence %></td>
+        <td><%= link_to 'Buy', buy_path(:product => product) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  value_pound: 1
+  value_pence: 1
+
+two:
+  value_pound: 1
+  value_pence: 1

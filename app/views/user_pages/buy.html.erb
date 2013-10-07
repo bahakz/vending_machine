@@ -1,0 +1,72 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>  
+
+<script type="text/javascript" language="javascript" > 
+		function add_money(pounds, pence, id)
+		{	
+			quantity = document.getElementById(id.value);
+
+			//alert("Pounds " + pounds.value + " pence " + pence.value + " id " + id.value + " form element " + quantity.value);
+
+			quantity.value = parseInt(quantity.value) + parseInt(1); 
+
+			form = document.getElementById("mainF");
+			total = parseInt(form["pounds"].value) * parseInt(100) + parseInt(form["pence"].value);
+			added = parseInt(pounds.value) * parseInt(100) + parseInt(pence.value);
+
+			total = total - added; 
+
+			if (total > 0) 
+			{
+				form["pounds"].value = Math.floor(total / 100); 
+				form["pence"].value = Math.floor(total % 100);
+			}
+			else 
+			{
+					
+			}
+
+			return false; 
+		}
+</script> 
+
+<form id = "mainF" >
+You are going to buy <%= @product.name %> 
+<br/>
+<br/>
+Please Insert <input id = "pounds" name = "pounds" type = "text" value = <%= @product.price_pound %> /> pounds 
+
+and
+
+			<input id = "pence" name = "pence" type = "text" value = <%= @product.price_pence %> > pences. 
+
+<% @coins.each do |coin| %> 
+
+	       <input id = "<%=coin.id%>" name = "<%=coin.id%>" type = "hidden" type="number" value  = 0 > 
+
+<% end %>
+
+
+
+</form>
+
+<% @coins.each do |coin| %> 
+
+<% if (coin.value_pound == nil) 
+		coin.value_pound = 0;
+end%> 
+
+<% if (coin.value_pence == nil) 
+		coin.value_pence = 0; 
+end%> 
+
+	    <form  
+	    	onsubmit="return add_money(this.pounds, this.pence, this.id)" method="get" 
+	     > 
+	       <input id = "pounds" type = "hidden" value  = <%= coin.value_pound %> > 
+	       <input id = "pence" type = "hidden" value = <%= coin.value_pence %> >
+	       <input id = "id" type = "hidden" value = <%= coin.id %> >
+	       <input type="submit">
+	    </form>
+<% end %>
+
+
