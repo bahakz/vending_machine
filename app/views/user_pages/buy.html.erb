@@ -22,31 +22,30 @@
 			}
 			else 
 			{
-					
+				form["change"].value = -1 * total;	
+				form.submit(); 
 			}
 
 			return false; 
 		}
 </script> 
 
-<form id = "mainF" >
+<form id = "mainF" onsubmit="user_pages" action = "finish_and_change">
+
+<input id = "product" name = "product" type = "hidden" value = <%= @product.id %> />
+
 You are going to buy <%= @product.name %> 
 <br/>
 <br/>
-Please Insert <input id = "pounds" name = "pounds" type = "text" value = <%= @product.price_pound %> /> pounds 
 
-and
+Please Insert <input id = "pounds" name = "pounds" type = "number" value = <%= @product.price_pound %> /> pounds and
+			<input id = "pence" name = "pence" type = "number" value = <%= @product.price_pence %> > pences. 
 
-			<input id = "pence" name = "pence" type = "text" value = <%= @product.price_pence %> > pences. 
+			<input id = "change" name = "change" type = "number" value = 0 >
 
-<% @coins.each do |coin| %> 
-
-	       <input id = "<%=coin.id%>" name = "<%=coin.id%>" type = "hidden" type="number" value  = 0 > 
-
-<% end %>
-
-
-
+			<% @coins.each do |coin| %> 
+				<input id = "<%=coin.id%>" name = "<%=coin.id%>" type = "hidden" type="number" value  = 0 > 
+			<% end %>
 </form>
 
 <% @coins.each do |coin| %> 

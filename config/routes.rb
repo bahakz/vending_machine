@@ -1,7 +1,8 @@
 VendingMachine::Application.routes.draw do
-  
+
   resources :products
   get "user_pages/index" 
+  get "user_pages/finish_and_change" 
   get "user_pages/buy", as: :buy
   resources :coins
 
