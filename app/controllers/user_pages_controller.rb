@@ -12,15 +12,15 @@ class UserPagesController < ApplicationController
   def finish_and_change
   	
   	@product = Product.find(params[:product]);
+  	@product.quantity -= 1; 
+  	@product.save
+
   	@change = Integer(params[:change]); 
-
   	@a = Array.new
-
   	@a[0] = 0; 
   	@values = Array.new
-
     @coins = Coin.all
-
+    
     @coins.each do |coin|
     	coin.quantity += Integer(params[coin.id.to_s]); 
     	value = coin.value_pound * 100 + coin.value_pence; 

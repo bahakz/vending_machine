@@ -1,11 +1,15 @@
 VendingMachine::Application.routes.draw do
+  get "welcome/index"
   resources :coins
 
   resources :products
 
-  get "user_pages/index" 
+  root 'welcome#index'
+
+  get "user_pages/index", as: :user_index
   get "user_pages/finish_and_change" 
   get "user_pages/buy", as: :buy
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

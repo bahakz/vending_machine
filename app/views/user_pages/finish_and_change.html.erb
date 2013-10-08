@@ -1,17 +1,21 @@
 
 You successfully bought <%= @product.name %> 
-
+<br/>
 You change of <%= @change/100 %> pounds and <%= @change%100 %> pence is here. 
-
 
 <!-- The coins is <%= @coins.inspect %> 
 The array is <%= @a.inspect %> 
 The User Coins are <%= @user_coins.inspect %> 
 the values is <%= @values.inspect %> 
  -->
+ <br/>
 
 Please take the following coins: 
 
 <% @user_coins.each do |coin_name| %>
 	<br/><%= coin_name %> <br/>
 <% end %> 
+
+<br/>
+
+<%= link_to 'Buy more', user_index_path %> 

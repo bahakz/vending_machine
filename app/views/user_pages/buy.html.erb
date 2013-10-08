@@ -38,10 +38,10 @@ You are going to buy <%= @product.name %>
 <br/>
 <br/>
 
-Please Insert <input id = "pounds" name = "pounds" type = "number" value = <%= @product.price_pound %> /> pounds and
-			<input id = "pence" name = "pence" type = "number" value = <%= @product.price_pence %> > pences. 
+Please Insert <input id = "pounds" name = "pounds" type = "text" size = 5 value = <%= @product.price_pound %> readonly/> pounds and
+			<input id = "pence" name = "pence" type = "text" size = 5 value = <%= @product.price_pence %> readonly> pences. 
 
-			<input id = "change" name = "change" type = "number" value = 0 >
+			<input id = "change" name = "change" type = "hidden" value = 0 >
 
 			<% @coins.each do |coin| %> 
 				<input id = "<%=coin.id%>" name = "<%=coin.id%>" type = "hidden" type="number" value  = 0 > 
@@ -59,12 +59,12 @@ end%>
 end%> 
 
 	    <form  
-	    	onsubmit="return add_money(this.pounds, this.pence, this.id)" method="get" 
+	    	onsubmit="return add_money(this.pounds, this.pence, this.id)" method="post" 
 	     > 
 	       <input id = "pounds" type = "hidden" value  = <%= coin.value_pound %> > 
 	       <input id = "pence" type = "hidden" value = <%= coin.value_pence %> >
 	       <input id = "id" type = "hidden" value = <%= coin.id %> >
-	       <input type="submit">
+	       <input type="submit"  name "submit" value = "<%= coin.name %>">
 	    </form>
 <% end %>
 
