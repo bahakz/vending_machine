@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  name: MyString
   value_pound: 1
   value_pence: 1
+  quantity: 1
 
 two:
+  name: MyString
   value_pound: 1
   value_pence: 1
+  quantity: 1

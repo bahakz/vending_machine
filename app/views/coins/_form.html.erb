@@ -12,12 +12,20 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
     <%= f.label :value_pound %><br>
     <%= f.number_field :value_pound %>
   </div>
   <div class="field">
     <%= f.label :value_pence %><br>
     <%= f.number_field :value_pence %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.number_field :quantity %>
   </div>
   <div class="actions">
     <%= f.submit %>

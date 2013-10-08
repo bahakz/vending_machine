@@ -3,8 +3,10 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
       <th>Value pound</th>
       <th>Value pence</th>
+      <th>Quantity</th>
       <th></th>
       <th></th>
       <th></th>
@@ -14,8 +16,10 @@
   <tbody>
     <% @coins.each do |coin| %>
       <tr>
+        <td><%= coin.name %></td>
         <td><%= coin.value_pound %></td>
         <td><%= coin.value_pence %></td>
+        <td><%= coin.quantity %></td>
         <td><%= link_to 'Show', coin %></td>
         <td><%= link_to 'Edit', edit_coin_path(coin) %></td>
         <td><%= link_to 'Destroy', coin, method: :delete, data: { confirm: 'Are you sure?' } %></td>

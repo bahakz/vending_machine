@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Name:</strong>
+  <%= @coin.name %>
+</p>
+
+<p>
   <strong>Value pound:</strong>
   <%= @coin.value_pound %>
 </p>
@@ -8,6 +13,11 @@
 <p>
   <strong>Value pence:</strong>
   <%= @coin.value_pence %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @coin.quantity %>
 </p>
 
 <%= link_to 'Edit', edit_coin_path(@coin) %> |

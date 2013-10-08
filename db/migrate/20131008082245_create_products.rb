@@ -4,6 +4,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :name
       t.integer :price_pound
       t.integer :price_pence
+      t.integer :quantity
 
       t.timestamps
     end

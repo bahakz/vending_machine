@@ -4,8 +4,10 @@ one:
   name: MyString
   price_pound: 1
   price_pence: 1
+  quantity: 1
 
 two:
   name: MyString
   price_pound: 1
   price_pence: 1
+  quantity: 1
